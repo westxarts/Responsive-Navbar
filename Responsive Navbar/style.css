@@ -1,0 +1,143 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+
+header {
+	background-color: #000;
+	padding: 1rem 2rem;
+	color: #fff;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header a {
+	color: #fff;
+	font-weight: bold;
+}
+
+.header__nav {
+	display: flex;
+	align-items: center;
+	gap: 2rem
+	
+}
+
+.header__logo {
+	color: #FDD36A;
+	font-size: 1.3rem;
+}
+
+nav a {
+	color: #FDD36A;
+}
+
+.header__hamburger {
+/*	background-color: red;*/
+	height: 2rem;
+	width: 3rem;
+	margin: auto 1rem;
+	cursor: pointer;
+
+	position: fixed;
+	top: 8px;
+	right: 0;
+	transition: all 0.5s ease-in-out;
+	z-index: 11;
+
+	display: none;
+}
+
+.line-1,
+.line-2,
+.line-3 {
+	height: 3px;
+	background-color: #FDD36A;
+	margin-top: 0.5rem;
+	transition: all 0.5s ease-in-out;
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+	.header__nav {
+		display: flex;
+		flex-direction: column;
+		top: -2.3rem;
+		right: 50%;
+		padding: 2rem;
+		background-color: #000;
+		transform: translateX(50%) translateY(5.5rem) scaleY(0);
+		border-bottom-left-radius: 0.5rem;
+    	border-bottom-right-radius: 0.5rem;
+    	transition: all 0.5s ease-in-out;
+    	transform-origin: top;
+    	
+
+		position: fixed;
+
+	}
+
+	.header__nav a {
+		color: #FDD36A;
+	}
+
+	.header__hamburger {
+		display: block;
+	}
+
+	.hamburger-toggled {
+		transform: rotate(360deg);
+		width: 40px;
+		transition: all 0.5s ease-in-out;
+	}
+
+	.line-1-toggled {
+		transform: rotate(45deg) translate(5.1px, 10.7px);
+		transition: all 0.5s ease-in-out;
+		background-color: #EB455F;
+	}
+
+	.line-2-toggled {
+		transform: scale(0);
+		transition: all 0.5s ease-in-out;
+	}
+
+	.line-3-toggled {
+		transform: rotate(-45deg) translate(5.6px, -9.5px);
+		transition: all 0.5s ease-in-out;
+		background-color: #EB455F;
+	}
+
+	.display-nav {
+		transform: translateX(50%) translateY(5.5rem) scaleY(1);
+		transform-origin: top;
+	}
+
+	.overlay {
+    position: relative;
+    z-index: 9;
+	}
+
+    .overlay::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0 0 0 / 0.75);
+        z-index: 9;
+    }
+}
+
+
+
+
